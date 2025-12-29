@@ -32,7 +32,7 @@ export default function Hero() {
 
                 <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
                     <Link
-                        href="#waitlist"
+                        href="https://tally.so/r/KYe9dk"
                         className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-indigo-600 px-8 font-medium text-white transition-all duration-300 hover:bg-indigo-700 hover:scale-105 hover:ring-2 hover:ring-indigo-400 hover:ring-offset-2 hover:ring-offset-white"
                     >
                         <span className="mr-2">Join the Waitlist</span>
