@@ -1,5 +1,8 @@
+"use client";
+
 import { Bot, ShieldCheck, Share2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 const pillars = [
     {
@@ -29,18 +32,31 @@ export default function ProductPillars() {
     return (
         <section className="py-24">
             <div className="mx-auto max-w-6xl px-4">
-                <div className="mb-16 text-center">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.5 }}
+                    className="mb-16 text-center"
+                >
                     <h2 className="text-3xl font-bold tracking-tight text-zinc-900 md:text-4xl">
                         Here's how <span className="text-indigo-600">Pyper</span> helps
                     </h2>
                     <p className="mt-4 text-lg text-zinc-600">
                         Three logical layers to protect and power your business.
                     </p>
-                </div>
+                </motion.div>
 
                 <div className="grid gap-8 md:grid-cols-3">
-                    {pillars.map((pillar) => (
-                        <div key={pillar.title} className="group rounded-2xl border border-zinc-200 bg-white p-8 transition-shadow hover:shadow-lg">
+                    {pillars.map((pillar, index) => (
+                        <motion.div
+                            key={pillar.title}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+                            className="group rounded-2xl border border-zinc-200 bg-white p-8 transition-shadow hover:shadow-lg"
+                        >
                             <div className={cn("mb-6 inline-flex rounded-lg p-3", pillar.bg, pillar.color)}>
                                 <pillar.icon className="h-6 w-6" />
                             </div>
@@ -50,7 +66,7 @@ export default function ProductPillars() {
                             <p className="text-zinc-600">
                                 {pillar.description}
                             </p>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
