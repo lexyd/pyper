@@ -6,7 +6,7 @@ export default function Persona() {
             <div className="mx-auto max-w-6xl px-4">
                 <div className="mb-16 text-center">
                     <h2 className="text-3xl font-bold tracking-tight text-zinc-900 md:text-4xl">
-                        Built for Your Stage of Growth
+                        Built by creators for Creators
                     </h2>
                     <p className="mt-4 text-lg text-zinc-600">
                         Whether you're a solo powerhouse or scaling up.
