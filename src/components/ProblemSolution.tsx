@@ -1,22 +1,36 @@
-import { AlertTriangle, CheckCircle2, Inbox, Zap } from "lucide-react";
-import { cn } from "@/lib/utils";
+"use client";
+
+import { AlertTriangle, CheckCircle2, Inbox, Zap, AlertCircle } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function ProblemSolution() {
     return (
-        <section className="bg-zinc-50 py-24">
+        <section id="features" className="bg-zinc-50 py-24">
             <div className="mx-auto max-w-6xl px-4">
-                <div className="mb-16 text-center">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.5 }}
+                    className="mb-16 text-center"
+                >
                     <h2 className="text-3xl font-bold tracking-tight text-zinc-900 md:text-4xl">
                         The Inbox is Broken for Creators
                     </h2>
                     <p className="mt-4 text-lg text-zinc-600">
                         High-stakes opportunities are buried in low-priority noise.
                     </p>
-                </div>
+                </motion.div>
 
                 <div className="grid gap-8 md:grid-cols-2">
                     {/* The Problem */}
-                    <div className="relative overflow-hidden rounded-2xl border border-red-200 bg-red-50/50 p-8">
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                        className="relative overflow-hidden rounded-2xl border border-red-200 bg-red-50/50 p-8"
+                    >
                         <div className="mb-6 flex items-center gap-3">
                             <div className="rounded-lg bg-red-100 p-2 text-red-600">
                                 <AlertTriangle className="h-6 w-6" />
@@ -28,8 +42,8 @@ export default function ProblemSolution() {
                             {[
                                 "Missed lucrative deadlines due to clutter",
                                 "Legal risks hidden in long email threads",
-                                "brand deals mixed with spam and fan mail",
-                                "Manual follow-ups slipping through cracks"
+                                "Brand deals mixed with spam and fan mail",
+                                "Manual follow-ups slipping through cracks",
                             ].map((item, i) => (
                                 <li key={i} className="flex items-start gap-3 text-zinc-700">
                                     <Inbox className="mt-1 h-5 w-5 shrink-0 text-red-400" />
@@ -37,10 +51,16 @@ export default function ProblemSolution() {
                                 </li>
                             ))}
                         </ul>
-                    </div>
+                    </motion.div>
 
                     {/* The Solution */}
-                    <div className="relative overflow-hidden rounded-2xl border border-indigo-200 bg-white p-8 shadow-xl">
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="relative overflow-hidden rounded-2xl border border-indigo-200 bg-white p-8 shadow-xl"
+                    >
                         <div className="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-indigo-500/20 blur-xl"></div>
                         <div className="mb-6 flex items-center gap-3">
                             <div className="rounded-lg bg-indigo-100 p-2 text-indigo-600">
@@ -53,8 +73,25 @@ export default function ProblemSolution() {
                             {[
                                 "AI auto-detects deals & prioritizes them",
                                 "Visual pipeline: Lead → Contract → Paid",
-                                "Automatic 'Red Flag' legal highlighting",
-                                "One-click branded review links"
+                            ].map((item, i) => (
+                                <li key={i} className="flex items-start gap-3 text-zinc-700">
+                                    <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-indigo-500" />
+                                    <span>{item}</span>
+                                </li>
+                            ))}
+
+                            {/* Highlight feature: Red Flag */}
+                            <li className="flex items-start gap-3 text-zinc-700">
+                                <div className="mt-1 flex items-center justify-center h-5 w-5 shrink-0 rounded-full bg-red-100">
+                                    <AlertCircle className="h-3 w-3 text-red-600" />
+                                </div>
+                                <span>
+                                    Automatic <span className="font-medium text-red-600">"Red Flag"</span> legal highlighting
+                                </span>
+                            </li>
+
+                            {[
+                                "One-click branded review links",
                             ].map((item, i) => (
                                 <li key={i} className="flex items-start gap-3 text-zinc-700">
                                     <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-indigo-500" />
@@ -62,7 +99,7 @@ export default function ProblemSolution() {
                                 </li>
                             ))}
                         </ul>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>
