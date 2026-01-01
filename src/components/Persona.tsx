@@ -1,21 +1,36 @@
+"use client";
+
 import { User, Users } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Persona() {
     return (
         <section className="bg-zinc-50 py-24">
             <div className="mx-auto max-w-6xl px-4">
-                <div className="mb-16 text-center">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.5 }}
+                    className="mb-16 text-center"
+                >
                     <h2 className="text-3xl font-bold tracking-tight text-zinc-900 md:text-4xl">
                         Built for Your Stage of Growth
                     </h2>
                     <p className="mt-4 text-lg text-zinc-600">
                         Whether you're a solo powerhouse or scaling up.
                     </p>
-                </div>
+                </motion.div>
 
                 <div className="grid gap-8 md:grid-cols-2">
                     {/* Solo Creator */}
-                    <div className="rounded-2xl border border-zinc-200 bg-white p-8">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="rounded-2xl border border-zinc-200 bg-white p-8"
+                    >
                         <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-zinc-100">
                             <User className="h-6 w-6 text-zinc-900" />
                         </div>
@@ -33,10 +48,16 @@ export default function Persona() {
                                 One-click contract checks
                             </li>
                         </ul>
-                    </div>
+                    </motion.div>
 
                     {/* Small Team */}
-                    <div className="rounded-2xl border border-zinc-200 bg-white p-8">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                        className="rounded-2xl border border-zinc-200 bg-white p-8"
+                    >
                         <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-zinc-100">
                             <Users className="h-6 w-6 text-zinc-900" />
                         </div>
@@ -54,7 +75,7 @@ export default function Persona() {
                                 Team comments on contracts
                             </li>
                         </ul>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>
